@@ -29,6 +29,38 @@ export function loadDataFailed(error) {
     error
   };
 }
+
+// action creator pour le post ? Update ? Delete ?
+export function postData(name) {
+  return function(dispatch) {
+    dispatch(postDataStarted());
+    axios
+      .post('https://pony-api-sanavoowah.now.sh/pony/')
+      .then(data => dispatch(postDataSuccess(data)))
+      .catch(error => dispatch(postDataFailed(error)));
+  };
+}
+
+export function postDataStarted() {
+  return {
+    type: 'POST_DATA_STARTED'
+  };
+}
+export function postDataSuccess(data) {
+  // Display data in console
+  return {
+    type: 'POST_DATA_SUCCESS',
+    data
+  };
+}
+export function postDataFailed(error) {
+  // Display error in console
+  return {
+    type: 'POST_DATA_FAILED',
+    error
+  };
+}
+
 /*
 export const createPony = name => {
   // Id deducted from the state in reducers
