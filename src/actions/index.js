@@ -29,3 +29,26 @@ export function loadDataFailed(error) {
     error
   };
 }
+
+export const createPony = name => {
+  // Id deducted from the state in reducers
+  return {
+    type: 'CREATE_PONY',
+    name
+  };
+};
+
+export const deletePony = id => {
+  return {
+    type: 'DELETE_PONY',
+    id
+  };
+};
+
+export const updatePony = (id, name) => {
+  return {
+    type: 'UPDATE_PONY',
+    id,
+    name
+  };
+};
