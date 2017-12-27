@@ -29,7 +29,7 @@ export function loadDataFailed(error) {
     error
   };
 }
-
+/*
 export const createPony = name => {
   // Id deducted from the state in reducers
   return {
@@ -52,3 +52,4 @@ export const updatePony = (id, name) => {
     name
   };
 };
+*/
