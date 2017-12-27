@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class InputPonies extends React.PureComponent {
+export default class InputPony extends React.PureComponent {
   constructor() {
     super();
     this.state = {
@@ -39,4 +39,7 @@ export default class InputPonies extends React.PureComponent {
   }
 }
 
-//Proptypes
+InputPony.proptypes = {
+    onClick = PropTypes.func.isRequired
+}
+;
