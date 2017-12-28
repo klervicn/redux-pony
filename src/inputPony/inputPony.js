@@ -19,7 +19,7 @@ export default class InputPony extends React.PureComponent {
 
   addPony(evt) {
     evt.preventDefault();
-    this.props.onClick(this.props.nextId, this.state.inputValue);
+    this.props.onClick(this.state.inputValue);
     this.setState({
       inputValue: ''
     });

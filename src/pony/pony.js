@@ -5,7 +5,7 @@ export default class Pony extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: this.props.text
+      inputValue: this.props.name
     };
     this.updateInputValue = this.updateInputValue.bind(this);
     this.deletePony = this.deletePony.bind(this);
@@ -30,7 +30,11 @@ export default class Pony extends React.PureComponent {
 
   render() {
     return (
-      <li>
+      <li
+        style={{
+          listStyleType: 'none'
+        }}
+      >
         <input
           type="text"
           value={this.state.inputValue}
@@ -42,11 +46,9 @@ export default class Pony extends React.PureComponent {
     );
   }
 }
-/*
 Pony.propTypes = {
   onDeleteClick: PropTypes.func.isRequired,
   onUpdateClick: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired
 };
-*/

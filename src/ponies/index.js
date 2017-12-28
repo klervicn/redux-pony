@@ -3,14 +3,13 @@ import { Ponies } from './ponies';
 import { updateData, deleteData } from '../actions';
 
 function mapStateToProps(state) {
-  console.log(state.ponies);
-  return { poniesList: state.ponies }; // Pk .ponies ici ?
+  return { poniesList: state.ponies };
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onUpdateClick: (id, text) => {
-      dispatch(updateData(id, text));
+    onUpdateClick: (id, name) => {
+      dispatch(updateData(id, name));
     },
     onDeleteClick: id => {
       dispatch(deleteData(id));

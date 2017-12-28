@@ -4,13 +4,13 @@ import { postData } from '../actions';
 import InputPony from './inputPony';
 
 const mapStateToProps = state => {
-  return { nextId: state.ponies.length + 1 };
+  return {};
 };
 
 const mapDispatchStateToProps = dispatch => {
   return {
-    onClick: (id, text) => {
-      dispatch(postData(id, text));
+    onClick: text => {
+      dispatch(postData(text));
     }
   };
 };
