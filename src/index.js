@@ -6,11 +6,11 @@ import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { loadPoniesReducer } from './reducers';
+import poniesReducer from './reducers';
 import { loadData } from './actions/index';
 
 const reducers = {
-  ponies: loadPoniesReducer
+  ponies: poniesReducer
 };
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
