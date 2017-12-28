@@ -16,47 +16,63 @@ export function loadDataStarted() {
   };
 }
 export function loadDataSuccess(data) {
-  // Display data in console
   return {
     type: 'LOAD_DATA_SUCCESS',
     data
   };
 }
 export function loadDataFailed(error) {
-  // Display error in console
   return {
     type: 'LOAD_DATA_FAILED',
     error
   };
 }
 
-// action creator pour le post ? Update ? Delete ?
-export function postData(name) {
+export function postData(id, name) {
   return function(dispatch) {
-    dispatch(postDataStarted());
     axios
-      .post('https://pony-api-sanavoowah.now.sh/pony/')
-      .then(data => dispatch(postDataSuccess(data)))
+      .post('https://pony-api-sanavoowah.now.sh/pony/', { id, name })
+      .then(() => dispatch(postDataSuccess(id, name)))
       .catch(error => dispatch(postDataFailed(error)));
   };
 }
 
-export function postDataStarted() {
-  return {
-    type: 'POST_DATA_STARTED'
-  };
-}
-export function postDataSuccess(data) {
+export function postDataSuccess(id, name) {
   // Display data in console
   return {
     type: 'POST_DATA_SUCCESS',
-    data
+    id,
+    name
   };
 }
 export function postDataFailed(error) {
   // Display error in console
   return {
     type: 'POST_DATA_FAILED',
+    error
+  };
+}
+
+export function deleteData(id) {
+  return function(dispatch) {
+    axios
+      .delete('https://pony-api-sanavoowah.now.sh/pony/', { id })
+      .then(() => dispatch(deleteDataSuccess(id)))
+      .catch(error => dispatch(deleteDataFailed(error)));
+  };
+}
+
+export function deleteDataSuccess(id) {
+  // Display data in console
+  return {
+    type: 'DELETE_DATA_SUCCESS',
+    id
+  };
+}
+export function deletetDataFailed(error) {
+  // Display error in console
+  return {
+    type: 'DELETE_DATA_FAILED',
     error
   };
 }

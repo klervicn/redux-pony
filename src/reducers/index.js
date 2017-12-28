@@ -10,6 +10,12 @@ export function loadPoniesReducer(state = [], action) {
       console.log(action.error);
       return state;
 
+    case 'POST_DATA_SUCCESS':
+      return [...state, { id: action.id, name: action.name }];
+
+    case 'POST_DATA_FAILED':
+      console.log(action.error);
+      return state;
     default:
       return state;
   }
