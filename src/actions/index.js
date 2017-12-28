@@ -38,7 +38,6 @@ export function postData(id, name) {
 }
 
 export function postDataSuccess(id, name) {
-  // Display data in console
   return {
     type: 'POST_DATA_SUCCESS',
     id,
@@ -46,7 +45,6 @@ export function postDataSuccess(id, name) {
   };
 }
 export function postDataFailed(error) {
-  // Display error in console
   return {
     type: 'POST_DATA_FAILED',
     error
@@ -56,48 +54,43 @@ export function postDataFailed(error) {
 export function deleteData(id) {
   return function(dispatch) {
     axios
-      .delete('https://pony-api-sanavoowah.now.sh/pony/', { id })
+      .delete('https://pony-api-sanavoowah.now.sh/pony/', { id }) // check url and parameters
       .then(() => dispatch(deleteDataSuccess(id)))
       .catch(error => dispatch(deleteDataFailed(error)));
   };
 }
 
 export function deleteDataSuccess(id) {
-  // Display data in console
   return {
     type: 'DELETE_DATA_SUCCESS',
     id
   };
 }
-export function deletetDataFailed(error) {
-  // Display error in console
+export function deleteDataFailed(error) {
   return {
     type: 'DELETE_DATA_FAILED',
     error
   };
 }
 
-/*
-export const createPony = name => {
-  // Id deducted from the state in reducers
-  return {
-    type: 'CREATE_PONY',
-    name
+export function updateData(id, name) {
+  return function(dispatch) {
+    axios
+      .put('https://pony-api-sanavoowah.now.sh/pony/', { id, name }) // check url and parameters
+      .then(() => dispatch(updateDataSuccess(id, name)))
+      .catch(error => dispatch(updateDataFailed(error)));
   };
-};
+}
 
-export const deletePony = id => {
+export function updateDataSuccess(id) {
   return {
-    type: 'DELETE_PONY',
+    type: 'UPDATE_DATA_SUCCESS',
     id
   };
-};
-
-export const updatePony = (id, name) => {
+}
+export function updateDataFailed(error) {
   return {
-    type: 'UPDATE_PONY',
-    id,
-    name
+    type: 'UPDATE_DATA_FAILED',
+    error
   };
-};
-*/
+}

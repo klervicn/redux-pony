@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import InputPonies from '../inputPony/inputPony';
 
 export default class Pony extends React.PureComponent {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      inputValue: ''
+      inputValue: this.props.text
     };
     this.updateInputValue = this.updateInputValue.bind(this);
     this.deletePony = this.deletePony.bind(this);
+    this.updatePony = this.updatePony.bind(this);
   }
 
   updateInputValue(evt) {
@@ -25,23 +25,28 @@ export default class Pony extends React.PureComponent {
 
   updatePony(evt) {
     evt.preventDefault();
-    this.props.onUpdate(this.props.id, this.state.inputValue);
+    this.props.onUpdateClick(this.props.id, this.state.inputValue);
   }
 
   render() {
-    <div>
+    return (
       <li>
-        <input type="text" value={text} onChange={this.updateInputValue} />
+        <input
+          type="text"
+          value={this.state.inputValue}
+          onChange={this.updateInputValue}
+        />
         <button onClick={this.updatePony}>Update</button>
         <button onClick={this.deletePony}>Delete</button>
       </li>
-    </div>;
+    );
   }
 }
-
-InputPonies.propTypes = {
+/*
+Pony.propTypes = {
   onDeleteClick: PropTypes.func.isRequired,
   onUpdateClick: PropTypes.func.isRequired,
   text: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired
 };
+*/
