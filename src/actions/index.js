@@ -1,5 +1,6 @@
 import axios from 'axios';
 import * as url from 'url';
+import types from '../types';
 const baseUrl = 'https://my-pony-api-vmgex73fz7i6.runkit.sh/pony/';
 const MAX_ID = 1000000000;
 
@@ -16,19 +17,19 @@ export function loadData() {
 
 export function loadDataStarted() {
   return {
-    type: 'LOAD_DATA_STARTED'
+    type: types.LOAD_DATA_STARTED
   };
 }
 export function loadDataSuccess(response) {
   const data = response.data;
   return {
-    type: 'LOAD_DATA_SUCCESS',
+    type: types.LOAD_DATA_SUCCESS,
     data
   };
 }
 export function loadDataFailed(error) {
   return {
-    type: 'LOAD_DATA_FAILED',
+    type: types.LOAD_DATA_FAILED,
     error
   };
 }
@@ -45,14 +46,14 @@ export function postData(name) {
 
 export function postDataSuccess(id, name) {
   return {
-    type: 'POST_DATA_SUCCESS',
+    type: types.UPDATE_DATA_SUCCESS,
     id,
     name
   };
 }
 export function postDataFailed(error) {
   return {
-    type: 'POST_DATA_FAILED',
+    type: types.postDataFailed,
     error
   };
 }
@@ -68,13 +69,13 @@ export function deleteData(id) {
 
 export function deleteDataSuccess(id) {
   return {
-    type: 'DELETE_DATA_SUCCESS',
+    type: types.DELETE_DATA_SUCCESS,
     id
   };
 }
 export function deleteDataFailed(error) {
   return {
-    type: 'DELETE_DATA_FAILED',
+    type: types.DELETE_DATA_FAILED,
     error
   };
 }
@@ -90,14 +91,14 @@ export function updateData(id, name) {
 
 export function updateDataSuccess(id, name) {
   return {
-    type: 'UPDATE_DATA_SUCCESS',
+    type: types.UPDATE_DATA_SUCCESS,
     id,
     name
   };
 }
 export function updateDataFailed(error) {
   return {
-    type: 'UPDATE_DATA_FAILED',
+    type: types.UPDATE_DATA_FAILED,
     error
   };
 }
