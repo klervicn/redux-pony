@@ -9,7 +9,7 @@ export function loadData() {
 
     return axios
       .get(baseUrl)
-      .then(data => dispatch(loadDataSuccess(data)))
+      .then(response => dispatch(loadDataSuccess(response)))
       .catch(error => dispatch(loadDataFailed(error)));
   };
 }
@@ -19,7 +19,8 @@ export function loadDataStarted() {
     type: 'LOAD_DATA_STARTED'
   };
 }
-export function loadDataSuccess(data) {
+export function loadDataSuccess(response) {
+  const data = response.data;
   return {
     type: 'LOAD_DATA_SUCCESS',
     data

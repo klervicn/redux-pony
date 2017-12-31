@@ -3,8 +3,7 @@ export default function poniesReducer(state = [], action) {
     case 'LOAD_DATA_STARTED':
       return state;
     case 'LOAD_DATA_SUCCESS':
-      const data = action.data.data;
-      const nextPoniesList = Array.prototype.concat(state, data);
+      const nextPoniesList = Array.prototype.concat(state, action.data);
       return nextPoniesList;
 
     case 'LOAD_DATA_FAILED':
