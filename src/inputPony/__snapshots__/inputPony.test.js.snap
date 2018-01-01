@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Add
+    </button>
+  </form>
+</div>
+`;

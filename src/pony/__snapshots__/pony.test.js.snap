@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<li
+  style={
+    Object {
+      "listStyleType": "none",
+    }
+  }
+>
+  <input
+    onChange={[Function]}
+    type="text"
+    value="Poney de test"
+  />
+  <button
+    onClick={[Function]}
+  >
+    Update
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+</li>
+`;

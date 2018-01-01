@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Pony from '../pony/pony';
 
-export const Ponies = ({ poniesList, onUpdateClick, onDeleteClick }) => (
+const Ponies = ({ poniesList, onUpdateClick, onDeleteClick }) => (
   <ul>
     {poniesList.map(pony => (
       <Pony
@@ -26,3 +26,5 @@ Ponies.proptypes = {
   onUpdateClick: PropTypes.func.isRequired,
   onDeleteClick: PropTypes.func.isRequired
 };
+
+export default Ponies;

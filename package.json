@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "react-test-renderer": "^16.2.0"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -16,7 +17,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
+    "test:watch": "npm test -- --watch",
     "eject": "react-scripts eject"
   }
 }

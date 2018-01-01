@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { Ponies } from './ponies';
+import Ponies from './ponies';
 import { updateData, deleteData } from '../actions';
 
 function mapStateToProps(state) {
