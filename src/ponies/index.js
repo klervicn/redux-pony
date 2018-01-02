@@ -3,7 +3,11 @@ import Ponies from './ponies';
 import { updateData, deleteData } from '../actions';
 
 function mapStateToProps(state) {
-  return { poniesList: state.ponies };
+  return {
+    poniesList: state.ponies.poniesList,
+    isLoading: state.isLoading,
+    errorMessage: state.errorMessage
+  };
 }
 
 const mapDispatchToProps = dispatch => {

@@ -36,37 +36,48 @@ export function loadDataFailed(error) {
 
 export function postData(name) {
   return function(dispatch) {
+    dispatch(postDataStarted());
     const nextId = Math.floor(Math.random() * MAX_ID);
     return axios
       .post(baseUrl, { id: nextId, name })
       .then(() => dispatch(postDataSuccess(nextId, name)))
-      .catch(error => dispatch(postDataFailed(error)));
+      .catch(error => dispatch(postDataFailed(error.response.data)));
+  };
+}
+export function postDataStarted() {
+  return {
+    type: types.POST_DATA_STARTED
   };
 }
 
 export function postDataSuccess(id, name) {
   return {
-    type: types.UPDATE_DATA_SUCCESS,
+    type: types.POST_DATA_SUCCESS,
     id,
     name
   };
 }
 export function postDataFailed(error) {
   return {
-    type: types.postDataFailed,
+    type: types.POST_DATA_FAILED,
     error
   };
 }
 
 export function deleteData(id) {
   return function(dispatch) {
+    dispatch(deleteDataStarted());
     return axios
       .delete(url.resolve(baseUrl, id.toString()))
       .then(() => dispatch(deleteDataSuccess(id)))
       .catch(error => dispatch(deleteDataFailed(error)));
   };
 }
-
+export function deleteDataStarted() {
+  return {
+    type: types.DELETE_DATA_STARTED
+  };
+}
 export function deleteDataSuccess(id) {
   return {
     type: types.DELETE_DATA_SUCCESS,
@@ -82,13 +93,18 @@ export function deleteDataFailed(error) {
 
 export function updateData(id, name) {
   return function(dispatch) {
+    dispatch(updateDataStarted());
     return axios
       .put(url.resolve(baseUrl, id.toString()), { id, name })
       .then(() => dispatch(updateDataSuccess(id, name)))
       .catch(error => dispatch(updateDataFailed(error)));
   };
 }
-
+export function updateDataStarted() {
+  return {
+    type: types.UPDATE_DATA_STARTED
+  };
+}
 export function updateDataSuccess(id, name) {
   return {
     type: types.UPDATE_DATA_SUCCESS,

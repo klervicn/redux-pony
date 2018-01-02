@@ -1,52 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`loads correctly 1`] = `
+<div>
+  <p>
+    Chargement en cours
+  </p>
+</div>
+`;
+
 exports[`renders correctly 1`] = `
-<ul>
-  <li
-    style={
-      Object {
-        "listStyleType": "none",
+<div>
+  <ul>
+    <li
+      style={
+        Object {
+          "listStyleType": "none",
+        }
       }
-    }
-  >
-    <input
-      onChange={[Function]}
-      type="text"
-      value="Petit Poney"
-    />
-    <button
-      onClick={[Function]}
     >
-      Update
-    </button>
-    <button
-      onClick={[Function]}
-    >
-      Delete
-    </button>
-  </li>
-  <li
-    style={
-      Object {
-        "listStyleType": "none",
+      <input
+        onChange={[Function]}
+        type="text"
+        value="Petit Poney"
+      />
+      <button
+        onClick={[Function]}
+      >
+        Update
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </li>
+    <li
+      style={
+        Object {
+          "listStyleType": "none",
+        }
       }
-    }
-  >
-    <input
-      onChange={[Function]}
-      type="text"
-      value="Mycroft"
-    />
-    <button
-      onClick={[Function]}
     >
-      Update
-    </button>
-    <button
-      onClick={[Function]}
-    >
-      Delete
-    </button>
-  </li>
-</ul>
+      <input
+        onChange={[Function]}
+        type="text"
+        value="Mycroft"
+      />
+      <button
+        onClick={[Function]}
+      >
+        Update
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </li>
+  </ul>
+  <p>
+    This is an error
+  </p>
+</div>
 `;
