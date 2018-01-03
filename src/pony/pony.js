@@ -20,12 +20,12 @@ export default class Pony extends React.PureComponent {
 
   deletePony(evt) {
     evt.preventDefault();
-    this.props.onDeleteClick(this.props.id);
+    this.props.deleteData(this.props.id);
   }
 
   updatePony(evt) {
     evt.preventDefault();
-    this.props.onUpdateClick(this.props.id, this.state.inputValue);
+    this.props.updateData(this.props.id, this.state.inputValue);
   }
 
   render() {
